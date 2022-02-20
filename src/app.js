@@ -1,7 +1,7 @@
 import express from 'express';
 import helmet from 'helmet';
 
-import bussinesRoutes from './services/bussines/routes.js';
+import businessRoutes from './services/business/routes.js';
 import mongodb from './database/database.js';
 
 const PORT = process.env.PORT || 5000;
@@ -16,10 +16,11 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET');
   next();
 });
+app.use(express.json());
 
-app.use('/',bussinesRoutes);
+app.use('/',businessRoutes);
 
-app.use('/',(req, res)=>{res.send("hola mundo")});
+app.use('/',(req, res)=>{res.status(401).send()});
 
 app.listen(PORT, () => {
   mongodb();

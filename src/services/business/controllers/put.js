@@ -1,4 +1,4 @@
-import Business from '../../../database/models/Business.js';
+import Business from '../../../database/models.js';
 
 
 const controller = async (req, res)=>{
