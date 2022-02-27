@@ -3,6 +3,7 @@ const { Schema } = mongoose;
 
 const businessSchema = new Schema({
   _id: Schema.Types.ObjectId,
+  businessId: String,
   name: String,
   currency: String,
   frontPageImage: String,

@@ -11,6 +11,7 @@ const controller = async (req, res)=>{
   try{
     const business = new models.BusinessModel({
       _id: new mongoose.Types.ObjectId(),
+      businessId: data.businessId.toLowerCase(),
       frontPageImage: data.frontPageImage,
       avatarImage: data.avatarImage,
       businessName: data.businessName,  
